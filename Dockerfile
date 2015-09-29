@@ -8,6 +8,8 @@ ADD scripts/apache.sh /src/apache.sh
 
 RUN /src/base.sh
 RUN /src/mysql.sh
+COPY config/mysql.cnf /etc/mysql/conf.d/conf.cnf
+
 RUN /src/application.sh
 
 COPY config/vhost.conf /etc/apache2/sites-available/openeyes.conf
